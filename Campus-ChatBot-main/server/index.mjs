@@ -9,10 +9,10 @@ const PORT = 3001;
 const LIMIT = 10 * 1024 * 1024; // Beginner-friendly 10 MB PDF cap
 const CACHE_MS = 5 * 60 * 1000;
 const sourceUrl = process.env.PDF_SOURCE_URL?.trim();
-const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
+const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
 const apiKey = process.env.GEMINI_API_KEY?.trim();
-if (!apiKey || apiKey === 'PASTE_YOUR_KEY_HERE') {
+if (!apiKey) {
   throw new Error('Set a real GEMINI_API_KEY in the root .env file.');
 }
 
